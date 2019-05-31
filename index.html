@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <script>
+            function computerPlay() {
+                let randomNumber = Math.floor(Math.random() * 3); //assignms random number between 0 and 2
+                let choice;
+
+                switch(randomNumber) {
+                    case '0':
+                        choice = 'Rock';
+                        break;
+                    case '1':
+                        choice = 'Paper';
+                        break;
+                    case '2':
+                        choice = 'Scissors';
+                        break;
+                    default:
+                        alert('Unexpected Random Number');
+                }
+
+                return choice;
+            }
+
+            function playRound(playerSelection, computerSelection) {
+                playerSelection = playerSelection[0].toUpperCase() + playerSelection.toLowerCase().slice(1, playerSelection.length);
+                computerSelection = computerSelection[0].toUpperCase() + computerSelection.toLowerCase().slice(1, computerSelection.length);
+
+                let resultMsg;
+
+                if (playerSelection == computerSelection) {
+                    resultMsg = "It's a tie: " + playerSelection + " vs " + computerSelection;
+                }
+
+                else {
+                    if (playerSelection == 'Rock' && computerSelection == 'Paper' || playerSelection == 'Scissors' && computerSelection == 'Rock' || playerSelection == 'Paper' && computerSelection == 'Scissors') {
+                        resultMsg = "You lose. " + computerSelection + " beats " + playerSelection;
+                    }
+
+                    else {
+                        resultMsg = "You win. " + playerSelection + " beats " + computerSelection;
+                    }
+                }
+
+                return resultMsg;
+
+            }
+
+            function game() {
+                var a = 3;
+                var b = 4;
+            }
+        </script>
+    </body>
+</html>
