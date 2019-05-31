@@ -1,4 +1,4 @@
-# RockPaperScissors
+# Rock-Paper-Scissors
 
 ## Motivation
 This is a console simulation of rock-scissors-paper game, using javascript only
