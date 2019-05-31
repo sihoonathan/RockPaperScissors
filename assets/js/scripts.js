@@ -100,7 +100,7 @@ function game() {
         }
     }
 
-    winnerDecider();
+    winnerDecider(); //winde
 }
 
 game();
