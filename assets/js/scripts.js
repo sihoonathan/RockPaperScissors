@@ -100,7 +100,7 @@ function game() {
         }
     }
 
-    winnerDecider(); //winde
+    winnerDecider(); //windeslakfjskjf
 }
 
 game();
