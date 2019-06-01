@@ -100,10 +100,8 @@ function game() {
         }
     }
 
-<<<<<<< HEAD
-    winnerDecider(); //windeslakfjskjfaldsjflaksjdf
-=======
-   
+    winnerDecider(); //tetra
+
 }
 
 game();
