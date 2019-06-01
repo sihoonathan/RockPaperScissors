@@ -100,7 +100,10 @@ function game() {
         }
     }
 
+<<<<<<< HEAD
     winnerDecider(); //windeslakfjskjfaldsjflaksjdf
+=======
+   
 }
 
 game();
