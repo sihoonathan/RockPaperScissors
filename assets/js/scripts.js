@@ -100,7 +100,7 @@ function game() {
         }
     }
 
-    winnerDecider(); //tetra
+    winnerDecider(); //tetra // tetra added
 
 }
 
