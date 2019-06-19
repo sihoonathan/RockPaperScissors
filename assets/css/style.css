@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width:  100%;
+    min-width: 800px;
+    height: 100%;
+    min-height: 100%;
+}
+
+header {
+    font-family: 'ZCOOL KuaiLe', cursive;;
+}
+
+.main {
+    background-color: #000000;
+    height: 95%;
+    text-align: center;
+    width: 100%;
+    overflow: hidden;
+}
+
+p {
+    color: #D3A065;
+}
+
+.wholeBoard {
+    font-family: Arial;
+    width: 50%;
+    margin: 20px auto;
+    height: 100%;
+}
+
+.scoreBoard {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 60px;
+    height: 30%;
+    position: relative;
+}
+
+.userBoard {
+    width: 150px;
+}
+
+.cpuBoard {
+    width: 150px;
+}
+
+.divider {
+    position: absolute;
+    width: 4px;
+    height: 100%;
+    background-color: white;
+}
+
+.msgBoard {
+    margin-top: 20px;
+    margin-bottom: 120px;
+    overflow: hidden;
+}
+
+button {
+    background-color: black;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+}
+
+button:hover {
+    transform: scale(1.5);
+}
+
+button img {
+    width: 80px;
+}
+
+.scoreBoard img {
+    width: 100%;
+    display: none;
+}
+
+.round {
+    margin-bottom: 10px;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    color: white;
+    background-color: #83694B;
+    height: 5%;
+}
+
+.footer p {
+    font-family: Andale Mono;
+    color: black;
+}
+

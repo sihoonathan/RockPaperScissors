@@ -101,7 +101,6 @@ function game() {
     }
 
     winnerDecider(); //tetra // tetra added
-
 }
 
 game();
