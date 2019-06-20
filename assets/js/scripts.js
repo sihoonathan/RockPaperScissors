@@ -1,6 +1,28 @@
+const buttons = document.querySelectorAll('button');
+let round = 0;
+
+function addScore(e) {
+    if (e.type != 'click') return;
+    const playerSelection = this.getAttribute('data-choice');
+    const computerSelection = computerPlay();
+
+    const winner = playRound(playerSelection, computerSelection );
+
+    if (winner != 'tie') {
+        const winnerElem = document.querySelector(`[data-winner="${winner}"]`);
+        let winnerCurrScore = Number(winnerElem.textContent);
+        winnerCurrScore += 1;
+        winnerElem.textContent = winnerCurrScore;
+    }
+}
+
+buttons.forEach(button => {
+    button.addEventListener('click', addScore);
+})
+
 function computerPlay() {
 
-    let randomNumber = Math.floor(Math.random() * 3); //assignms random number between 0 and 2
+    let randomNumber = Math.floor(Math.random() * 3); //assigns random number between 0 and 2
     let choice;
 
     switch(randomNumber) {
@@ -18,6 +40,15 @@ function computerPlay() {
     }
 
     return choice;
+}
+
+function displayResult(resultMsg) {
+    const roundElem = document.querySelector('.round');
+    roundElem.textContent = 'Round ' + round;
+
+    const roundMsg = document.querySelector('.message');
+    roundMsg.textContent = resultMsg;
+
 }
 
 function playRound(playerSelection, computerSelection) {
@@ -44,7 +75,9 @@ function playRound(playerSelection, computerSelection) {
         }
     }
 
-    alert(resultMsg);
+    round += 1;
+
+    displayResult(resultMsg);
 
     return winner;
 }
@@ -58,14 +91,6 @@ function game() {
 
         let playerSelection;
 
-        while (true) {
-            playerSelection = prompt(`Let's play Rock, Paper, Scissors for 5 Rounds. Round ${i}!`);
-            playerSelection = playerSelection.toLowerCase();
-            if (playerSelection == 'rock' || playerSelection == 'paper' || playerSelection == 'scissors') {
-                break;
-            }
-            alert("Only Rock, Paper, Scissors. Nothing else!");
-        }
 
         let computerSelection = computerPlay();
 

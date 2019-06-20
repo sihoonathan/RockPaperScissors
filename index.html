@@ -14,23 +14,23 @@
                 </header>
                 <div class="scoreBoard">
                     <div class="userBoard">
-                        <p>You: 0</p>
+                        <p>You: <span data-winner="player">0</span></p>
                         <img src="assets/img/rock2.png">
                     </div>
                     <div class="divider"></div>
                     <div class="cpuBoard">
-                        <p>CPU: 0</p>
+                        <p>Cpu: <span data-winner="computer">0</span></p>
                         <img src="assets/img/paper2.png">
                     </div>
                 </div>
                 <div class="msgBoard">
-                    <p class="round">Round 1</p>
-                    <p class="message">Rock beats scissors.</p>
+                    <p class="round"></p>
+                    <p class="message"></p>
                 </div>
                 <div class="buttonBoard">
-                    <button><img src="assets/img/rock.png"></button>
-                    <button><img src="assets/img/paper.png"></button>
-                    <button><img src="assets/img/scissors.png"></button>
+                    <button data-choice="rock"><img src="assets/img/rock.png"></button>
+                    <button data-choice="paper"><img src="assets/img/paper.png"></button>
+                    <button data-choice="scissors"><img src="assets/img/scissors.png"></button>
                 </div>
                 </section>
             </section>
@@ -38,6 +38,6 @@
         <div class="footer">
             <p>Developed by Nathan Choi</p>
         </div>
-<!--        <script src="assets/js/scripts.js"></script>-->
+        <script src="assets/js/scripts.js"></script>
     </body>
 </html>
