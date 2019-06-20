@@ -95,7 +95,7 @@ button img {
 
 .scoreBoard img {
     width: 100%;
-    display: none;
+    visibility: hidden;
 }
 
 .round {
