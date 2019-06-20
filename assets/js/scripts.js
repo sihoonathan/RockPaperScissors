@@ -42,12 +42,28 @@ function computerPlay() {
     return choice;
 }
 
-function displayResult(resultMsg) {
+function displayScoreMsg(resultMsg) {
     const roundElem = document.querySelector('.round');
     roundElem.textContent = 'Round ' + round;
 
     const roundMsg = document.querySelector('.message');
     roundMsg.textContent = resultMsg;
+}
+
+function displayImgChoice(playerSelection, computerSelection) {
+    const imgList = {Rock: 'assets/img/rock2.png', Paper: 'assets/img/paper2.png', Scissors: 'assets/img/scissors2.png'};
+
+    const playerElem = document.querySelector('[data-img="playerImg"]');
+    const cpuElem = document.querySelector('[data-img="cpuImg"]');
+
+    /*console.log(playerSelection);
+    console.log(playerElem.getAttributeNode('src'));
+    console.log(imgList[playerSelection]);*/
+    playerElem.getAttributeNode('src').value = imgList[playerSelection];
+    playerElem.style.visibility = 'visible';
+
+    cpuElem.getAttributeNode('src').value = imgList[computerSelection];
+    cpuElem.style.visibility = 'visible';
 
 }
 
@@ -57,6 +73,8 @@ function playRound(playerSelection, computerSelection) {
 
     let resultMsg;
     let winner;
+
+    displayImgChoice(playerSelection, computerSelection);
 
     if (playerSelection == computerSelection) {
         resultMsg = "It's a tie: " + playerSelection + " vs " + computerSelection;
@@ -77,7 +95,7 @@ function playRound(playerSelection, computerSelection) {
 
     round += 1;
 
-    displayResult(resultMsg);
+    displayScoreMsg(resultMsg);
 
     return winner;
 }
@@ -87,10 +105,9 @@ function game() {
     let computerScore = 0;
     const numRounds = 5;
 
-    for (i = 1; i <= numRounds; i++) {
+    for (let i = 1; i <= numRounds; i++) {
 
         let playerSelection;
-
 
         let computerSelection = computerPlay();
 
