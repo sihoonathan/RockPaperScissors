@@ -1,8 +1,15 @@
 const buttons = document.querySelectorAll('button');
 let round = 0;
+let gameEnded = false;
+
+buttons.forEach(button => {
+    button.addEventListener('click', addScore);
+})
+
 
 function addScore(e) {
-    if (e.type != 'click') return;
+    if (e.type != 'click' || gameEnded == true) return;
+
     const playerSelection = this.getAttribute('data-choice');
     const computerSelection = computerPlay();
 
@@ -13,12 +20,24 @@ function addScore(e) {
         let winnerCurrScore = Number(winnerElem.textContent);
         winnerCurrScore += 1;
         winnerElem.textContent = winnerCurrScore;
+
+        if (winnerCurrScore == 5) {
+            const roundMsg = document.querySelector('.message');
+
+            switch(winner) {
+                case 'player':
+                    roundMsg.textContent = 'You are the final winner :)';
+                    break;
+                case 'computer':
+                    roundMsg.textContent = 'You lose to CPU :('
+                    break;
+            }
+
+            gameEnded = true;
+        }
     }
 }
 
-buttons.forEach(button => {
-    button.addEventListener('click', addScore);
-})
 
 function computerPlay() {
 
@@ -56,15 +75,11 @@ function displayImgChoice(playerSelection, computerSelection) {
     const playerElem = document.querySelector('[data-img="playerImg"]');
     const cpuElem = document.querySelector('[data-img="cpuImg"]');
 
-    /*console.log(playerSelection);
-    console.log(playerElem.getAttributeNode('src'));
-    console.log(imgList[playerSelection]);*/
     playerElem.getAttributeNode('src').value = imgList[playerSelection];
     playerElem.style.visibility = 'visible';
 
     cpuElem.getAttributeNode('src').value = imgList[computerSelection];
     cpuElem.style.visibility = 'visible';
-
 }
 
 function playRound(playerSelection, computerSelection) {
@@ -100,6 +115,7 @@ function playRound(playerSelection, computerSelection) {
     return winner;
 }
 
+/*
 function game() {
     let playerScore = 0;
     let computerScore = 0;
@@ -145,4 +161,4 @@ function game() {
     winnerDecider(); //tetra // tetra added
 }
 
-game();
+game();*/
