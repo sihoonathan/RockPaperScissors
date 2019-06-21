@@ -13,6 +13,7 @@
                     <h2><span style="color: #E56262">Rock</span> <span style="color: #789FF7">Paper</span> <span style="color: #5CCE77">Scissors</span></h2>
                 </header>
                 <div class="scoreBoard">
+
                     <div class="userBoard">
                         <p>You: <span data-winner="player">0</span></p>
                         <img data-img="playerImg" src="assets/img/rock2.png">
@@ -22,18 +23,22 @@
                         <p>Cpu: <span data-winner="computer">0</span></p>
                         <img data-img="cpuImg" src="assets/img/paper2.png">
                     </div>
+
                 </div>
                 <div class="msgBoard">
                     <p class="round"></p>
-                    <p class="message"></p>
+                    <div class="messageBox">
+                        <p class="message">Player that reaches the five wins first <br>will win the game.</p>
+                        <button class="reset">Play<br>again</button>
+                    </div>
                 </div>
                 <div class="buttonBoard">
                     <button data-choice="rock"><img src="assets/img/rock.png"></button>
                     <button data-choice="paper"><img src="assets/img/paper.png"></button>
                     <button data-choice="scissors"><img src="assets/img/scissors.png"></button>
                 </div>
-                </section>
             </section>
+
         </section>
         <div class="footer">
             <p>Developed by Nathan Choi</p>

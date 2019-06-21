@@ -1,11 +1,11 @@
 const buttons = document.querySelectorAll('button');
+
 let round = 0;
 let gameEnded = false;
 
 buttons.forEach(button => {
     button.addEventListener('click', addScore);
 })
-
 
 function addScore(e) {
     if (e.type != 'click' || gameEnded == true) return;
@@ -34,8 +34,33 @@ function addScore(e) {
             }
 
             gameEnded = true;
+
+            const resetBtn = document.querySelector('.reset');
+            resetBtn.style.display = 'initial';
+            resetBtn.addEventListener('click', () => {
+                reset();
+            })
         }
     }
+}
+
+function reset() {
+    const resetElem = document.querySelector('.reset');
+    resetElem.style.display = 'none';
+    const scoreElements = document.querySelectorAll("[data-winner]");
+    scoreElements.forEach(scoreElem => {
+        scoreElem.textContent = 0;
+    });
+    const msgElem = document.querySelector('.message');
+    msgElem.innerHTML = "Player that reaches the five wins first <br> will win the game."
+    gameEnded = false;
+    round = 0;
+    const imgElements = document.querySelectorAll('.scoreBoard img');
+    imgElements.forEach(elem => {
+        elem.style.visibility = 'hidden'
+    });
+    const roundElem = document.querySelector('.round');
+    roundElem.textContent = '';
 }
 
 

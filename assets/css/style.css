@@ -12,7 +12,7 @@ html, body {
 }
 
 header {
-    font-family: 'ZCOOL KuaiLe', cursive;;
+    font-family: 'ZCOOL KuaiLe', cursive;
 }
 
 .main {
@@ -24,7 +24,7 @@ header {
 }
 
 p {
-    color: #D3A065;
+    color: navajowhite;
 }
 
 .wholeBoard {
@@ -62,16 +62,32 @@ p {
     margin-bottom: 120px;*/
     height: 160px;
     overflow: hidden;
+    color: navajowhite;
 }
 
 .round {
     margin-top: 15px;
     height: 30%;
+    /*color: navajowhite;*/
 }
 
 .message {
     height: 70%;
+    /*color: navajowhite;*/
 }
+
+
+.reset {
+    border: 1px navajowhite solid;
+    color: navajowhite;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 20px;
+    overflow: hidden;
+    display: none;
+}
+
+
 
 button {
     background-color: black;
@@ -94,6 +110,7 @@ button img {
 }
 
 .scoreBoard img {
+    position: relative;
     width: 100%;
     visibility: hidden;
 }
@@ -101,6 +118,8 @@ button img {
 .round {
     margin-bottom: 10px;
 }
+
+
 
 .footer {
     display: flex;
