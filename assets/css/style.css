@@ -94,7 +94,7 @@ button {
     border: none;
     cursor: pointer;
     margin: 10px;
-    transition: all 0.1s;
+    transition: all 0.07s;
 }
 
 button:focus {
@@ -102,7 +102,7 @@ button:focus {
 }
 
 button:hover {
-    transform: scale(1.5);
+    opacity: 0.5;
 }
 
 button img {
@@ -119,8 +119,6 @@ button img {
     margin-bottom: 10px;
 }
 
-
-
 .footer {
     display: flex;
     flex-direction: column;
@@ -135,5 +133,9 @@ button img {
 .footer p {
     font-family: Andale Mono;
     color: black;
+}
+
+.animate {
+    transform: scale(1.5);
 }
 

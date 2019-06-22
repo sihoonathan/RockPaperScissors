@@ -1,4 +1,4 @@
-const buttons = document.querySelectorAll('button');
+const buttons = document.querySelectorAll('.transition');
 
 let round = 0;
 let gameEnded = false;
@@ -8,7 +8,10 @@ buttons.forEach(button => {
 })
 
 function addScore(e) {
+    this.classList.add('animate');
+
     if (e.type != 'click' || gameEnded == true) return;
+
 
     const playerSelection = this.getAttribute('data-choice');
     const computerSelection = computerPlay();
@@ -43,6 +46,18 @@ function addScore(e) {
         }
     }
 }
+
+const animatedBtns = document.querySelectorAll('.transition');
+animatedBtns.forEach(btn => {
+    btn.addEventListener('transitionend', removeTransition)
+});
+
+
+function removeTransition(e) {
+    if (e.propertyName != 'transform') return;
+    this.classList.remove('animate');
+}
+
 
 function reset() {
     const resetElem = document.querySelector('.reset');
@@ -139,51 +154,3 @@ function playRound(playerSelection, computerSelection) {
 
     return winner;
 }
-
-/*
-function game() {
-    let playerScore = 0;
-    let computerScore = 0;
-    const numRounds = 5;
-
-    for (let i = 1; i <= numRounds; i++) {
-
-        let playerSelection;
-
-        let computerSelection = computerPlay();
-
-        let winner = playRound(playerSelection, computerSelection);
-
-        function scoreTracker() {
-            if (winner == 'player') {
-                playerScore += 1;
-            } else if (winner == 'computer') {
-                computerScore += 1;
-            } else {
-                playerScore += 1;
-                computerScore += 1;
-            }
-        }
-
-        scoreTracker();
-    }
-
-    function winnerDecider() {
-        alert(`Player score: ${playerScore} vs Computer score: ${computerScore}`);
-        if (playerScore > computerScore) {
-            alert("You win!");
-        }
-
-        else if (playerScore < computerScore) {
-            alert("Computer wins!");
-        }
-
-        else {
-            alert("It's a tie!");
-        }
-    }
-
-    winnerDecider(); //tetra // tetra added
-}
-
-game();*/
