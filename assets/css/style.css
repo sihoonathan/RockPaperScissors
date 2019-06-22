@@ -95,6 +95,7 @@ button {
     cursor: pointer;
     margin: 10px;
     transition: all 0.07s;
+    opacity: 0.5;
 }
 
 button:focus {
@@ -102,7 +103,7 @@ button:focus {
 }
 
 button:hover {
-    opacity: 0.5;
+    opacity: 1.0;
 }
 
 button img {
