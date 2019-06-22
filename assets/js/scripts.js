@@ -32,7 +32,7 @@ function addScore(e) {
                     roundMsg.textContent = 'You are the final winner :)';
                     break;
                 case 'computer':
-                    roundMsg.textContent = 'You lose to CPU :('
+                    roundMsg.textContent = 'You lost :('
                     break;
             }
 
